@@ -193,9 +193,9 @@ const WhyChoose = () => {
           }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {reasons.map((r, i) => (
-            <ReasonCard key={r.title} r={r} i={i} />
-          ))}
+         {reasons.map((r, i) => (
+  <ReasonCard key={i} r={r} i={i} />
+))}
         </motion.div>
       </div>
     </section>
