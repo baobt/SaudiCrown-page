@@ -1,0 +1,197 @@
+@import './styles/fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Saudi Crown Vietnam — Design System
+  Premium · Cinematic · Middle East Luxury · Global Trade
+  All colors defined as HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 6%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 6%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 6%;
+
+    /* Brand: Deep black */
+    --primary: 0 0% 6%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Brand: Gold */
+    --gold: 41 52% 54%;
+    --gold-foreground: 0 0% 6%;
+    --gold-bright: 44 70% 62%;
+    --gold-deep: 38 55% 38%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 6%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 44%;
+
+    --accent: 41 52% 54%;
+    --accent-foreground: 0 0% 6%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 41 52% 54%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(44 70% 62%) 0%, hsl(41 52% 54%) 50%, hsl(38 55% 38%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 0% / 0.7) 0%, hsl(0 0% 0% / 0.35) 50%, hsl(0 0% 100% / 0.95) 100%);
+    --gradient-radial-gold: radial-gradient(circle at 50% 50%, hsl(41 52% 54% / 0.25), transparent 70%);
+
+    /* Shadows */
+    --shadow-gold: 0 20px 60px -20px hsl(41 52% 54% / 0.45);
+    --shadow-elegant: 0 30px 80px -30px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(44 70% 62% / 0.5);
+
+    /* Transitions */
+    --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 6%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 41 52% 54%;
+    --accent-foreground: 0 0% 6%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 41 52% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  /* Subtle background noise texture */
+  .noise::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  ::selection {
+    background: hsl(var(--gold) / 0.4);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Instrument Serif', 'Times New Roman', serif;
+    font-feature-settings: "liga", "dlig";
+  }
+  .font-sans {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-dark);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glass {
+    background: hsl(0 0% 100% / 0.06);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid hsl(0 0% 100% / 0.1);
+  }
+
+  .glass-light {
+    background: hsl(0 0% 100% / 0.7);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid hsl(0 0% 100% / 0.4);
+  }
+
+  .ease-cinematic {
+    transition-timing-function: var(--ease-cinematic);
+  }
+
+  .pulse-gold {
+    animation: pulse-gold 2.4s ease-in-out infinite;
+  }
+
+  @keyframes pulse-gold {
+    0%, 100% { box-shadow: 0 0 0 0 hsl(var(--gold) / 0.5); }
+    50% { box-shadow: 0 0 0 18px hsl(var(--gold) / 0); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .float { animation: float 6s ease-in-out infinite; }
+}
