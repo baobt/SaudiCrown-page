@@ -27,7 +27,7 @@ const Footer = () => {
             <div className="text-xs uppercase tracking-widest text-gold mb-4">{t("footer.contact")}</div>
             <ul className="space-y-2 text-sm text-primary-foreground/70">
               <li>{t("footer.address")}</li>
-              <li>trade@saudicrown-vn.com</li>
+              <li>info@saudicrowns.com</li>
               <li>{t("footer.phone")}</li>
             </ul>
           </div>

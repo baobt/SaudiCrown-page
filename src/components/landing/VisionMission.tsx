@@ -7,7 +7,7 @@ const VisionMission = () => {
   const missionPoints = [t("vm.mission.1"), t("vm.mission.2"), t("vm.mission.3")];
 
   return (
-    <section className="relative py-8 md:py-24 overflow-hidden">
+    <section className="relative py-1 md:py-24 overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
       <div className="container">
         <motion.div
@@ -15,7 +15,7 @@ const VisionMission = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-3xl mb-16"
+          className="max-w-3xl mb-4 md:mb-16"
         >
           <span className="text-xs tracking-[0.3em] uppercase text-gold font-medium">{t("vm.eyebrow")}</span>
           <h2 className="mt-4 font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight">
@@ -23,15 +23,15 @@ const VisionMission = () => {
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-4 md:gap-8">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="relative p-10 md:p-12 rounded-2xl border border-border bg-secondary/40 hover:border-gold/40 transition-colors duration-500 ease-cinematic"
+            className="relative p-5 md:p-12 rounded-2xl border border-border bg-secondary/40 hover:border-gold/40 transition-colors duration-500 ease-cinematic"
           >
-            <div className="w-14 h-14 rounded-xl bg-gradient-gold flex items-center justify-center mb-8">
+            <div className="w-14 h-14 rounded-xl bg-gradient-gold flex items-center justify-center mb-4 md:mb-8">
               <Eye className="text-gold-foreground" size={26} />
             </div>
             <h3 className="font-serif text-3xl md:text-4xl mb-6">{t("vm.vision.title")}</h3>
@@ -45,9 +45,9 @@ const VisionMission = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="relative p-10 md:p-12 rounded-2xl border border-border bg-secondary/40 hover:border-gold/40 transition-colors duration-500 ease-cinematic"
+            className="relative p-5 md:p-12 rounded-2xl border border-border bg-secondary/40 hover:border-gold/40 transition-colors duration-500 ease-cinematic"
           >
-            <div className="w-14 h-14 rounded-xl bg-gradient-gold flex items-center justify-center mb-8">
+            <div className="w-14 h-14 rounded-xl bg-gradient-gold flex items-center justify-center mb-4 md:mb-8">
               <Target className="text-gold-foreground" size={26} />
             </div>
             <h3 className="font-serif text-3xl md:text-4xl mb-6">{t("vm.mission.title")}</h3>

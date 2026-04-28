@@ -76,7 +76,7 @@ const Strengths = () => {
     { icon: Snowflake, title: t("str.5.title"), desc: t("str.5.desc") },
   ];
   return (
-    <section className="relative py-4 md:py-12 bg-[#08070a] text-primary-foreground overflow-hidden isolate">
+    <section className="relative py-0 md:py-12 bg-[#08070a] text-primary-foreground overflow-hidden isolate">
       {/* Deep base vignette */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,hsl(var(--gold)/0.18),transparent_55%),radial-gradient(ellipse_at_80%_100%,hsl(280_60%_20%/0.35),transparent_60%),radial-gradient(ellipse_at_10%_90%,hsl(220_60%_18%/0.4),transparent_60%)]" />
 
@@ -175,7 +175,7 @@ const Strengths = () => {
           </h2>
         </motion.div>
 
-        <div className="mt-6 md:mt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-1 md:mt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
           {strengths.map((s, i) => (
             <StrengthCard key={s.title} s={s} i={i} />
           ))}
